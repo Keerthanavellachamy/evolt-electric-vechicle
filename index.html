@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVOLT MOTORS — Power Your Journey. Drive the Future.</title>
+<meta name="description" content="EVOLT MOTORS — premium electric bikes, autos and cars. Power your journey, drive the future.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-logo">EVOLT <span style="color:var(--cyan);">MOTORS</span></div>
+  <div class="charge-line"><span></span></div>
+</div>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <a href="#" class="logo" data-page="home">EVOLT <span>MOTORS</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#" data-page="home" class="active">Home</a>
+    <a href="#" data-page="bikes">Bikes</a>
+    <a href="#" data-page="autos">Autos</a>
+    <a href="#" data-page="cars">Cars</a>
+    <a href="#" data-page="compare">Compare</a>
+    <a href="#" data-page="testride">Test Ride</a>
+    <a href="#" data-page="contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" id="soundToggle" aria-label="Toggle sound">🔊</button>
+    <button class="icon-btn" id="searchToggle" aria-label="Search vehicles">🔍</button>
+    <button class="icon-btn" id="cartToggle" data-page="cart" aria-label="View cart">
+      🛒<span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Search overlay -->
+<div class="search-bar" id="searchBar">
+  <button class="icon-btn close-search" id="closeSearch" aria-label="Close search">✕</button>
+  <input type="text" id="searchInput" placeholder="Search EVOLT X1, GPS, Fast Charging..." aria-label="Search vehicles">
+  <div id="searchResults"></div>
+</div>
+
+<main>
+
+<!-- ============ HOME PAGE ============ -->
+<section id="page-home">
+
+  <div class="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="mouse-light" id="mouseLight"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-brand">EVOLT MOTORS</div>
+        <div class="hero-label"><span class="dot"></span> NEXT GENERATION ELECTRIC MOBILITY</div>
+        <h1>Power Your <span class="grad">Journey.</span><br>Drive the <span class="grad">Future.</span></h1>
+        <p class="lead">Experience the next generation of electric mobility — bikes, autos and cars engineered for performance, range and style.</p>
+        <div class="hero-cta">
+          <a href="#" class="btn btn-primary" data-page="bikes" id="exploreBtn">Explore Vehicles</a>
+          <a href="#" class="btn btn-outline" data-page="testride">Book a Test Ride</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glow-ring"></div>
+        <img src="images/banners/hero.jpg" alt="EVOLT flagship electric car glowing in a dark cinematic studio">
+      </div>
+    </div>
+    <div class="scroll-down"><span>SCROLL</span><span class="chev"></span></div>
+  </div>
+
+  <section class="categories container">
+    <div class="section-head reveal">
+      <span class="section-tag">OUR RANGE</span>
+      <h2>One Brand. Every Journey.</h2>
+      <p>From daily commutes to family road trips — an EVOLT for every kind of journey.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="#" class="cat-card reveal" data-page="bikes">
+        <img src="images/bikes/x2pro.jpg" alt="EVOLT X2 PRO electric bike">
+        <h3>Electric Bikes</h3>
+        <p>Smart. Fast. Electric.</p>
+        <span class="btn btn-ghost btn-sm">Explore Bikes</span>
+      </a>
+      <a href="#" class="cat-card reveal" data-page="autos">
+        <img src="images/autos/a2pro.jpg" alt="EVOLT A2 PRO electric auto">
+        <h3>Electric Autos</h3>
+        <p>Built for Every Journey.</p>
+        <span class="btn btn-ghost btn-sm">Explore Autos</span>
+      </a>
+      <a href="#" class="cat-card reveal" data-page="cars">
+        <img src="images/cars/c1pro.jpg" alt="EVOLT C1 PRO electric car">
+        <h3>Electric Cars</h3>
+        <p>Drive Beyond Limits.</p>
+        <span class="btn btn-ghost btn-sm">Explore Cars</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="vehicles-section container">
+    <div class="section-head reveal">
+      <span class="section-tag">FULL LINEUP</span>
+      <h2>Find Your EVOLT</h2>
+      <p>Search and filter the entire range by type, price and range.</p>
+    </div>
+    <div class="filters-bar">
+      <div class="filter-group" data-filter-group="type">
+        <label>Type</label>
+        <button class="filter-chip active" data-value="All">All</button>
+        <button class="filter-chip" data-value="Bike">Bike</button>
+        <button class="filter-chip" data-value="Auto">Auto</button>
+        <button class="filter-chip" data-value="Car">Car</button>
+      </div>
+      <div class="filter-group" data-filter-group="price">
+        <label>Price</label>
+        <button class="filter-chip active" data-value="All">All</button>
+        <button class="filter-chip" data-value="u1">Under ₹1L</button>
+        <button class="filter-chip" data-value="1-3">₹1–3L</button>
+        <button class="filter-chip" data-value="3-5">₹3–5L</button>
+        <button class="filter-chip" data-value="a5">Above ₹5L</button>
+      </div>
+      <div class="filter-group" data-filter-group="range">
+        <label>Range</label>
+        <button class="filter-chip active" data-value="All">All</button>
+        <button class="filter-chip" data-value="u150">Under 150km</button>
+        <button class="filter-chip" data-value="150-250">150–250km</button>
+        <button class="filter-chip" data-value="a250">Above 250km</button>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="clearFilters">Clear Filters</button>
+    </div>
+    <div class="vehicle-grid" id="vehicleGrid"></div>
+  </section>
+
+  <section class="story container">
+    <div class="story-row">
+      <div class="story-media reveal reveal-left"><img src="images/bikes/x1.jpg" alt="EVOLT X1 electric bike"></div>
+      <div class="story-text reveal reveal-right">
+        <span class="section-tag">ELECTRIC BIKES</span>
+        <h2>Smart. Fast. Electric.</h2>
+        <p>Zip through the city with instant torque, regenerative braking and a smart digital display — the EVOLT bike range is built for everyday agility.</p>
+        <a href="#" class="btn btn-primary" data-page="bikes">Explore Bikes</a>
+      </div>
+    </div>
+  </section>
+  <section class="story container">
+    <div class="story-row reverse">
+      <div class="story-media reveal reveal-right"><img src="images/autos/a1.jpg" alt="EVOLT A1 electric auto"></div>
+      <div class="story-text reveal reveal-left">
+        <span class="section-tag">ELECTRIC AUTOS</span>
+        <h2>Built for Every Journey.</h2>
+        <p>Spacious, efficient and reliable — the EVOLT auto range keeps fleets and families moving with a long range and low running cost.</p>
+        <a href="#" class="btn btn-primary" data-page="autos">Explore Autos</a>
+      </div>
+    </div>
+  </section>
+  <section class="story container">
+    <div class="story-row">
+      <div class="story-media reveal reveal-left"><img src="images/cars/c1.jpg" alt="EVOLT C1 electric car"></div>
+      <div class="story-text reveal reveal-right">
+        <span class="section-tag">ELECTRIC CARS</span>
+        <h2>Drive Beyond Limits.</h2>
+        <p>Premium interiors, matrix LED lighting and up to 400 km of range — the EVOLT car range is engineered for the long haul.</p>
+        <a href="#" class="btn btn-primary" data-page="cars">Explore Cars</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why container">
+    <div class="section-head reveal">
+      <span class="section-tag">WHY EVOLT</span>
+      <h2>Engineered for Tomorrow</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">🌱</div><h4>Zero Emissions</h4><p>Cleaner mobility for a better future.</p></div>
+      <div class="why-card reveal"><div class="why-icon">💰</div><h4>Low Running Cost</h4><p>Save more on everyday journeys.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🧠</div><h4>Smart Technology</h4><p>Modern electric vehicle technology.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🛡️</div><h4>Reliable Performance</h4><p>Designed for everyday use.</p></div>
+    </div>
+  </section>
+
+  <section class="stats container">
+    <div class="stats-grid">
+      <div class="reveal reveal-scale"><div class="stat-num" data-count="100" data-suffix="+">0</div><div class="stat-label">EVs Delivered</div></div>
+      <div class="reveal reveal-scale"><div class="stat-num" data-count="300" data-suffix="+ km">0</div><div class="stat-label">Maximum Range</div></div>
+      <div class="reveal reveal-scale"><div class="stat-num" data-count="5" data-suffix=" Years">0</div><div class="stat-label">Warranty</div></div>
+      <div class="reveal reveal-scale"><div class="stat-num" data-count="24" data-suffix="/7">0</div><div class="stat-label">Support</div></div>
+    </div>
+  </section>
+
+  <section class="charging container reveal">
+    <span class="section-tag">BATTERY TECH</span>
+    <h2>Charge Your Future ⚡</h2>
+    <div style="position:relative;max-width:260px;margin:30px auto 0;">
+      <div class="lightning-flash" id="lightningFlash"></div>
+      <div class="battery-shell">
+        <div class="battery-fill" id="batteryFill"></div>
+        <div class="battery-pct" id="batteryPct">0%</div>
+      </div>
+    </div>
+    <p class="charge-status" id="chargeStatus">Ready to charge</p>
+    <button class="btn btn-primary" id="startChargingBtn">Start Charging</button>
+  </section>
+
+</section>
+
+<!-- ============ BIKES PAGE ============ -->
+<section id="page-bikes" class="hidden">
+  <div class="page-hero"><h1>Electric Bikes</h1><p>Smart. Fast. Electric.</p></div>
+  <div class="container vehicles-section">
+    <div class="vehicle-grid" id="gridBike"></div>
+  </div>
+</section>
+
+<!-- ============ AUTOS PAGE ============ -->
+<section id="page-autos" class="hidden">
+  <div class="page-hero"><h1>Electric Autos</h1><p>Built for Every Journey.</p></div>
+  <div class="container vehicles-section">
+    <div class="vehicle-grid" id="gridAuto"></div>
+  </div>
+</section>
+
+<!-- ============ CARS PAGE ============ -->
+<section id="page-cars" class="hidden">
+  <div class="page-hero"><h1>Electric Cars</h1><p>Drive Beyond Limits.</p></div>
+  <div class="container vehicles-section">
+    <div class="vehicle-grid" id="gridCar"></div>
+  </div>
+</section>
+
+<!-- ============ VEHICLE DETAIL PAGE ============ -->
+<section id="page-detail" class="hidden">
+  <div class="container" style="padding-top:120px;padding-bottom:80px;" id="detailContent"></div>
+</section>
+
+<!-- ============ COMPARE PAGE ============ -->
+<section id="page-compare" class="hidden">
+  <div class="page-hero"><h1>Compare Vehicles</h1><p>Select up to 3 vehicles to compare side by side.</p></div>
+  <div class="container" style="padding-bottom:80px;">
+    <div class="compare-picker" id="comparePicker"></div>
+    <div style="text-align:center;margin-bottom:24px;">
+      <button class="btn btn-ghost btn-sm" id="clearCompare">Clear Selection</button>
+    </div>
+    <div class="compare-table-wrap" id="compareTableWrap"></div>
+  </div>
+</section>
+
+<!-- ============ CART PAGE ============ -->
+<section id="page-cart" class="hidden">
+  <div class="page-hero"><h1>Your Cart</h1><p>Review your vehicles before checkout.</p></div>
+  <div class="container" style="padding-bottom:80px;" id="cartPageContent"></div>
+</section>
+
+<!-- ============ CHECKOUT PAGE ============ -->
+<section id="page-checkout" class="hidden">
+  <div class="page-hero"><h1>Checkout</h1><p>Complete your EVOLT order — frontend demo only.</p></div>
+  <div class="container" style="padding-bottom:80px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;">
+    <form class="form-card" id="checkoutForm" novalidate>
+      <h3 style="margin-top:0;">Delivery Details</h3>
+      <div class="form-grid">
+        <div class="field"><label>Full Name *</label><input type="text" name="fullName" required><span class="err-msg"></span></div>
+        <div class="field"><label>Mobile Number *</label><input type="tel" name="mobile" required><span class="err-msg"></span></div>
+        <div class="field full"><label>Email *</label><input type="email" name="email" required><span class="err-msg"></span></div>
+        <div class="field full"><label>Address *</label><input type="text" name="address" required><span class="err-msg"></span></div>
+        <div class="field"><label>City *</label><input type="text" name="city" required><span class="err-msg"></span></div>
+        <div class="field"><label>State *</label><input type="text" name="state" required><span class="err-msg"></span></div>
+        <div class="field"><label>Pincode *</label><input type="text" name="pincode" required><span class="err-msg"></span></div>
+      </div>
+      <h3>Payment Method</h3>
+      <div class="payment-options">
+        <div class="pay-opt selected" data-method="UPI">UPI</div>
+        <div class="pay-opt" data-method="Card">Card</div>
+        <div class="pay-opt" data-method="COD">Cash on Delivery</div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="placeOrderBtn">Place Order</button>
+    </form>
+    <div class="summary-card">
+      <h3 style="margin-top:0;">Order Summary</h3>
+      <div id="checkoutSummary"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUCCESS PAGE ============ -->
+<section id="page-success" class="hidden">
+  <div class="container" style="padding:140px 0 90px;" id="successContent"></div>
+</section>
+
+<!-- ============ TEST RIDE PAGE ============ -->
+<section id="page-testride" class="hidden">
+  <div class="page-hero"><h1>Book a Test Ride</h1><p>Feel the future — schedule your EVOLT test ride today.</p></div>
+  <div class="container" style="padding-bottom:80px;">
+    <form class="form-card" id="testRideForm" novalidate>
+      <div class="form-grid">
+        <div class="field"><label>Name *</label><input type="text" name="trName" id="trName" required><span class="err-msg"></span></div>
+        <div class="field"><label>Phone *</label><input type="tel" name="trPhone" id="trPhone" required><span class="err-msg"></span></div>
+        <div class="field full"><label>Email *</label><input type="email" name="trEmail" id="trEmail" required><span class="err-msg"></span></div>
+        <div class="field full"><label>Vehicle *</label><select name="trVehicle" id="trVehicle" required></select><span class="err-msg"></span></div>
+        <div class="field"><label>Date *</label><input type="date" name="trDate" id="trDate" required><span class="err-msg"></span></div>
+        <div class="field"><label>Time *</label><input type="time" name="trTime" id="trTime" required><span class="err-msg"></span></div>
+        <div class="field full"><label>Location *</label><input type="text" name="trLocation" id="trLocation" required placeholder="Preferred showroom or address"><span class="err-msg"></span></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Book Test Ride</button>
+      <div id="trResult" style="margin-top:16px;"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CONTACT PAGE ============ -->
+<section id="page-contact" class="hidden">
+  <div class="page-hero"><h1>Contact Us</h1><p>EVOLT MOTORS, Chennai, Tamil Nadu, India</p></div>
+  <div class="container" style="padding-bottom:80px;display:grid;grid-template-columns:1fr 1.2fr;gap:40px;">
+    <div class="reveal reveal-left in">
+      <h3>Get in Touch</h3>
+      <p style="color:var(--muted);">Chennai, Tamil Nadu, India</p>
+      <p style="color:var(--muted);">📞 +91 90000 12345</p>
+      <p style="color:var(--muted);">✉️ hello@evoltmotors.example</p>
+      <p style="color:var(--muted);">🕒 Mon–Sat, 9:00 AM – 7:00 PM</p>
+    </div>
+    <form class="form-card" id="contactForm" novalidate>
+      <div class="field"><label>Name *</label><input type="text" name="name" required><span class="err-msg"></span></div>
+      <div class="field"><label>Email *</label><input type="email" name="email" required><span class="err-msg"></span></div>
+      <div class="field"><label>Message *</label><textarea name="message" rows="4" required></textarea><span class="err-msg"></span></div>
+      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+      <div id="contactResult" style="margin-top:16px;"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- 360 Modal -->
+<div class="modal-overlay" id="modal360" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-360">
+    <button class="modal-close" id="modal360Close" aria-label="Close 360 view">✕</button>
+    <p class="modal-title" id="modal360Title">360° EXPERIENCE</p>
+    <div class="ring360"><img id="modal360Img" src="" alt="Vehicle 360 rotating view"></div>
+    <div class="modal-360-controls">
+      <button class="btn btn-ghost btn-sm" id="rotateLeft">◀ Rotate Left</button>
+      <button class="btn btn-ghost btn-sm" id="autoRotate">Auto Rotate</button>
+      <button class="btn btn-ghost btn-sm" id="stopRotate">Stop</button>
+      <button class="btn btn-ghost btn-sm" id="rotateRight">Rotate Right ▶</button>
+    </div>
+  </div>
+</div>
+
+<div id="toastHost" aria-live="polite"></div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px;">EVOLT <span>MOTORS</span></div>
+        <p>"Power Your Journey. Drive the Future."</p>
+        <div class="social-row">
+          <span class="icon-btn" aria-hidden="true">𝕏</span>
+          <span class="icon-btn" aria-hidden="true">in</span>
+          <span class="icon-btn" aria-hidden="true">ig</span>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#" data-page="home">Home</a>
+          <a href="#" data-page="bikes">Bikes</a>
+          <a href="#" data-page="autos">Autos</a>
+          <a href="#" data-page="cars">Cars</a>
+        </div>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="#" data-page="compare">Compare</a>
+          <a href="#" data-page="testride">Test Ride</a>
+          <a href="#" data-page="contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 EVOLT MOTORS. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script src="js/vehicles.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/compare.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/test-ride.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

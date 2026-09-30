@@ -1,0 +1,53 @@
+/* ===== EVOLT MOTORS — Animation helpers ===== */
+
+/* Start-vehicle sequence */
+.vcard-media.powering img, .detail-gallery-main.powering img{
+  filter:brightness(1.35) drop-shadow(0 0 24px rgba(0,229,255,0.6));
+  animation:jolt .5s ease;
+}
+@keyframes jolt{
+  0%,100%{ transform:translateX(0); }
+  20%{ transform:translateX(-4px); }
+  40%{ transform:translateX(4px); }
+  60%{ transform:translateX(-3px); }
+  80%{ transform:translateX(3px); }
+}
+.headlight-beam{
+  position:absolute; top:38%; left:8%; width:0; height:6px; background:linear-gradient(90deg, rgba(0,229,255,0.9), transparent);
+  border-radius:6px; opacity:0; pointer-events:none; filter:blur(2px);
+}
+.headlight-beam.on{ animation:beamOut .9s ease forwards; }
+@keyframes beamOut{
+  0%{ width:0; opacity:0; }
+  30%{ opacity:1; }
+  100%{ width:55%; opacity:0; }
+}
+.spark{
+  position:absolute; width:4px; height:4px; border-radius:50%; background:var(--green);
+  box-shadow:0 0 8px var(--green); pointer-events:none; animation:sparkFly .8s ease-out forwards;
+}
+@keyframes sparkFly{
+  0%{ transform:translate(0,0) scale(1); opacity:1; }
+  100%{ transform:translate(var(--dx,20px), var(--dy,-20px)) scale(0); opacity:0; }
+}
+
+/* Charging particles */
+.charge-particle{
+  position:absolute; width:5px; height:5px; border-radius:50%; background:var(--cyan);
+  animation:chargeFloat 1.2s ease-in-out infinite;
+}
+@keyframes chargeFloat{
+  0%,100%{ transform:translateY(0); opacity:.4; }
+  50%{ transform:translateY(-14px); opacity:1; }
+}
+.lightning-flash{ position:absolute; inset:0; background:rgba(57,255,157,0.15); opacity:0; }
+.lightning-flash.flash{ animation:flashPulse .4s ease; }
+@keyframes flashPulse{ 0%{ opacity:0;} 40%{ opacity:1;} 100%{ opacity:0;} }
+
+/* Mouse-follow hero light */
+.mouse-light{
+  position:absolute; width:420px; height:420px; border-radius:50%;
+  background:radial-gradient(circle, rgba(0,229,255,0.12), transparent 70%);
+  pointer-events:none; transform:translate(-50%,-50%); transition:left .15s linear, top .15s linear;
+  z-index:1;
+}
