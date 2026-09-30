@@ -2,7 +2,7 @@
 // All vehicle info lives here as plain JS objects. Swap "image" paths
 // with real photos any time — just keep the same filenames.
 
-const VEHICLES = [
+const VEHICLES = [ 
   {
     id: 1, name: "EVOLT X1", type: "Bike",
     price: 95000, battery: "3.5 kWh", range: "100 km", speed: "70 km/h",
